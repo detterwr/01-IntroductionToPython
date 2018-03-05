@@ -2,15 +2,15 @@
 Your chance to explore Loops and Turtles!
 
 Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
+         their colleagues and Will Detterman.
 """
 ###############################################################################
-# TODO: 1.
+# DONE: 1.
 #   On Line 5 above, replace  PUT_YOUR_NAME_HERE  with your own name.
 ###############################################################################
 
 ###############################################################################
-# TODO: 2.
+# DONE: 2.
 #   You should have RUN the  m4e_loopy_turtles  module and READ its code.
 #   (Do so now if you have not already done so.)
 #
@@ -27,3 +27,31 @@ Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
 #
 #   Don't forget to COMMIT-and-PUSH when you are done with this module.
 ###############################################################################
+
+import rosegraphics as rg
+
+window = rg.TurtleWindow()
+
+joe = rg.SimpleTurtle('turtle')
+joe.pen = rg.Pen('purple', 10)
+
+sal = rg.SimpleTurtle('turtle')
+sal.pen = rg.Pen('black', 10)
+
+size = 120
+angle = 90
+
+for k in range(10):
+    joe.left(angle)
+    joe.forward(size)
+    joe.right(angle+90)
+    joe.forward(size)
+    sal.left(45)
+    sal.backward(size)
+    sal.left(90)
+    sal.backward(size)
+
+    size = size-10
+    angle = angle-5
+
+window.close_on_mouse_click()
